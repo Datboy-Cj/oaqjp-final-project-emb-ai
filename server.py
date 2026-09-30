@@ -2,7 +2,7 @@
 import os
 from flask import Flask, render_template, request
 from requests.exceptions import RequestException
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 
@@ -34,5 +34,5 @@ def emotion_detection():
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("HOST", "127.0.0.1"),
+    app.run(host=os.environ.get("HOST", "0.0.0.0"),
             port=int(os.environ.get("PORT", "5000")), debug=False)
